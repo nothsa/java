@@ -48,6 +48,8 @@ if tarball_url =~ /example.com/
   Chef::Application.fatal!("You must change the download link to your private repository. You can no longer download java directly from http://download.oracle.com without a web broswer")
 end
 
+Chef::Application.fatal!("#{tarball_url}")
+
 include_recipe "java::set_java_home"
 
 java_ark "jdk" do
