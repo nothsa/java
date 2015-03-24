@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+Chef::Application.fatal!("____ #{node['java']['install_flavor']} ____")
+
 if node['java']['install_flavor'] != 'windows'
   if node['java']['jdk_version'].to_i == 8 and node['java']['install_flavor'] != 'oracle'
     Chef::Application.fatal!("JDK 8 is currently only provided with the Oracle JDK")
